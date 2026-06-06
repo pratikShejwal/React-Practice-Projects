@@ -1,0 +1,26 @@
+{
+  "name": "react-practice-projects",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pratikShejwal/React-Practice-Projects.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pratikShejwal/React-Practice-Projects/issues"
+  },
+  "homepage": "https://github.com/pratikShejwal/React-Practice-Projects#readme",
+  "description": "",
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  },
+  "dependencies": {
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  }
+}
