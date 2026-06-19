@@ -1,8 +1,3 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { jsx } from 'react/jsx-runtime'
-
-
 const productData =[
   {
     "id": 1,
@@ -245,59 +240,4 @@ const productData =[
     }
   }
 ]
-
-const NavBar = ()=>{
-    return(
-    <div className='navbar'>
-    <h1>Logo</h1>
-    <ul>
-    <li>Men</li>
-    <li>Women</li>
-    <li>Kids</li>
-    </ul>
-    </div>
-    )
-}
-
-const ProductCart = () =>{
-    return (
-        <div className='productCart'>
-            {/* <Product productData = {productData[0]}/> */}
-       {
-        productData.map((product,ind)=>{
-            return (
-                <Product key={ind} product={product}/>
-            )
-        })
-    }
-        </div>
-    )
-}
-
-const Product = (props)=>{
-    console.log(props);
-    
-    const {image,title,price,rating} = props.product;
-    return (
-        <div className='product'>
-            <img className='prodImg' src={image} alt="" />
-            <h1>
-                {title}
-            </h1>
-            <p>{rating.rate}</p>
-            <p>{price}</p>
-        </div>
-    )
-}
-
-const App = ()=>{
-    return (
-    <>
-    <NavBar/>
-    <ProductCart/>
-    </>
-    )
-}
-
-const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(<App/>);
+ export default productData
