@@ -27,7 +27,7 @@ const ProductCart = () =>{
   if (list.length === 0) {
     return <Skeleton/>
   }
-  
+   
     return (
         <div>
           <input type="text" onChange={(e)=>{
@@ -37,12 +37,11 @@ const ProductCart = () =>{
           }} value={searchText} id="" />
 
           <button onClick={()=>{
-            //  const data = list.filter((product)=>{
-            //   return product.title.includes(searchText);
-            // });
-            console.log(searchText);
-            
-            //   setList(data);
+             const data = list.filter((product)=>product.title.includes(searchText));
+           console.log(data);
+           
+             console.log(searchText); 
+            setList(data);
           }}>Search</button>
 
           <button onClick={()=>{
