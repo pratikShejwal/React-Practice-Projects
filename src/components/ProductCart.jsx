@@ -5,7 +5,9 @@ import { useState,useDeferredValue,useEffect } from "react";
 const ProductCart = () =>{
 
   const [list, setList] = useState([])
+  //const [allList, setAllList] = useState([])
   const [btName, setBtname] = useState('light')
+  const [searchText,setSearchText] = useState("")
   // let btName = 'light'
   useEffect(() => {
     fetchData()
@@ -17,6 +19,7 @@ const ProductCart = () =>{
     const formattedData = await data.json()
     console.log(formattedData);
     setList(formattedData)
+   
   }
 
   //console.log('rendering');
@@ -27,6 +30,21 @@ const ProductCart = () =>{
   
     return (
         <div>
+          <input type="text" onChange={(e)=>{
+            setSearchText(e.target.value)
+           // console.log(e.target.value);
+            
+          }} value={searchText} id="" />
+
+          <button onClick={()=>{
+            //  const data = list.filter((product)=>{
+            //   return product.title.includes(searchText);
+            // });
+            console.log(searchText);
+            
+            //   setList(data);
+          }}>Search</button>
+
           <button onClick={()=>{
             console.log('clicked');
             btName == 'light'?setBtname('dark'):setBtname('light')
@@ -43,7 +61,7 @@ const ProductCart = () =>{
             {
              list.map((product,ind)=>{
               return (
-                <Product key={ind} product={product}/>
+                <Product key={product.id} product={product}/>
             )
         })
     }
