@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom/client'
 import { jsx } from 'react/jsx-runtime'
 import NavBar  from './components/NavBar'
 import Product from './components/Product'
+// import About from './components/About'
 import ProductCart from './components/ProductCart'
 import { createBrowserRouter,Outlet,RouterProvider } from 'react-router-dom'
 import Men from './components/Men'
 import Kid from './components/Kid'
 import Women from './components/Women'
+import ProductDetails from './components/ProductDetails'
+import About from './components/About'
 
 const App = ()=>{
     return (
@@ -26,22 +29,31 @@ const appRouter = createBrowserRouter([
                 path: '/',
                 element:<ProductCart/>
             },
- {
+            {
         path:'/men',
         element:<Men/>
-    },
-    {
+       },
+      {
         path:'/women',
         element:<Women/>
-    },
+      },
      {
         path:'/kid',
-        element:<Kid/>,
+        element:<Kid/>,   
+     },
+     {
+        path:'/about',
+        element:<About/>,   
+     },
+     {
+        path:'/product/:prodId',
+        element:<ProductDetails/>,
         
-    },
+    }, 
+    
 
-        ],
-        errorElement:<Error/>
+    ],
+        //errorElement:<Error/>
     },
    
    

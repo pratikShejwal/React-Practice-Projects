@@ -9,6 +9,7 @@ const NavBar = ()=>{
     <li> <Link to='/men'>Men</Link></li>
     <li> <Link to='/women'>Women</Link></li>
     <li> <Link to='/kid'>Kids</Link></li>
+    <li> <Link to='/about'>About</Link></li>
     
     </ul>
    

@@ -2,6 +2,7 @@ import Product from "./Product";
 import Skeleton from "./Skeleton";
 import productData from "../utils/FakeAPI";
 import { useState,useDeferredValue,useEffect } from "react";
+import { Link } from "react-router-dom";
 const ProductCart = () =>{
 
   const [list, setList] = useState([])
@@ -49,8 +50,7 @@ const ProductCart = () =>{
             btName == 'light'?setBtname('dark'):setBtname('light')
           }}>{btName}</button>
             <button onClick={()=>{
-              // console.log(lists);
-              // console.log('filter applied');
+              
               let li = list.filter(product=>product.rating.rate>4);
               // console.log(li);
               setList(li);
@@ -60,8 +60,8 @@ const ProductCart = () =>{
             {
              list.map((product,ind)=>{
               return (
-                <Product key={product.id} product={product}/>
-            )
+              <Link key={product.id} to={`/product/${product.id}`}><Product key={product.id} product={product}/></Link> 
+             )
         })
     }
         </div>
