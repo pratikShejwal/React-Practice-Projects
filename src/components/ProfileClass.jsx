@@ -7,6 +7,10 @@ class ProfileClass extends React.Component {
             count:0
         }
     }
+    componentDidMount(){
+        console.log('component mounted');
+        
+    }
     render(){
         return(
             <div><h1>ClassBased {this.state.count}</h1>
