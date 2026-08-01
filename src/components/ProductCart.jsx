@@ -1,8 +1,9 @@
-import Product from "./Product";
+import Product, {HOC} from "./Product";
 import Skeleton from "./Skeleton";
 import productData from "../utils/FakeAPI";
 import { useState,useDeferredValue,useEffect } from "react";
 import { Link } from "react-router-dom";
+ 
 const ProductCart = () =>{
 
   const [list, setList] = useState([])
@@ -23,6 +24,7 @@ const ProductCart = () =>{
    
   }
 
+  const Component = HOC(Product)
   //console.log('rendering');
   
   if (list.length === 0) {
@@ -60,7 +62,12 @@ const ProductCart = () =>{
             {
              list.map((product,ind)=>{
               return (
-              <Link key={product.id} to={`/product/${product.id}`}><Product key={product.id} product={product}/></Link> 
+              <Link key={product.id} to={`/product/${product.id}`}>
+                {
+                  (product.rating.rate>=4) ? <Component product = {product}/>: <Product key={product.id} product={product}/>
+              
+                }
+                </Link> 
              )
         })
     }

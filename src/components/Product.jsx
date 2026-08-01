@@ -15,3 +15,17 @@ const Product = (props)=>{
 }
 
 export default Product
+
+export const HOC = (Product)=>{
+    return (props)=>{
+        return (
+     <>
+<span>Bestseller</span>
+<Product {...props}/>
+</>
+        );
+    }
+}
+
+// 
+// <Component/>
