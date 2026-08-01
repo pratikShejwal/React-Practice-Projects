@@ -8,8 +8,6 @@ class ProfileClass extends React.Component {
             count:0
         }
         console.log('constructor called');
-        
-
     }
 
    async componentDidMount(){

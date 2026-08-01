@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{Suspense,lazy} from 'react'
 import ReactDOM from 'react-dom/client'
 import { jsx } from 'react/jsx-runtime'
 import NavBar  from './components/NavBar'
@@ -11,6 +11,9 @@ import Kid from './components/Kid'
 import Women from './components/Women'
 import ProductDetails from './components/ProductDetails'
 import About from './components/About'
+// import Grocery from './components/Grocery'
+
+const Grocery = lazy(()=> import('./components/Grocery'))
 
 const App = ()=>{
     return (
@@ -32,6 +35,10 @@ const appRouter = createBrowserRouter([
             {
         path:'/men',
         element:<Men/>
+       },
+            {
+        path:'/grocery',
+        element:<Suspense fallback={<h1>Loading...</h1>}><Grocery/></Suspense>
        },
       {
         path:'/women',
