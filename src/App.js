@@ -4,6 +4,7 @@ import { jsx } from 'react/jsx-runtime'
 import NavBar  from './components/NavBar'
 import Product from './components/Product'
 // import About from './components/About'
+import { Provider } from 'react-redux'
 import ProductCart from './components/ProductCart'
 import { createBrowserRouter,Outlet,RouterProvider } from 'react-router-dom'
 import Men from './components/Men'
@@ -12,19 +13,19 @@ import Women from './components/Women'
 import ProductDetails from './components/ProductDetails'
 import About from './components/About'
 import UserContext from './utils/UserContext'
-
+import appStore from './store/store'
 // import Grocery from './components/Grocery'
 
 const Grocery = lazy(()=> import('./components/Grocery'))
 
 const App = ()=>{
     return (
-
+<Provider store={appStore}>
     <div>
     <NavBar/>
     <Outlet/>
     </div>
-
+</Provider>
     )
 }
 const appRouter = createBrowserRouter([

@@ -1,6 +1,10 @@
+import { useSelector } from 'react-redux'
 import {Link} from 'react-router-dom'
 
 const NavBar = ()=>{
+    const cartItems = useSelector((store)=>store.cart.cartItem)
+    console.log(cartItems);
+    
     return(
     <div className='navbar'>
     <button>Light</button>
@@ -10,6 +14,7 @@ const NavBar = ()=>{
     <li> <Link to='/grocery'>Grocery</Link></li>
     <li> <Link to='/women'>Women</Link></li>
     <li> <Link to='/kid'>Kids</Link></li>
+    <li> <Link to='/cart'>Cart</Link></li>
     <li> <Link to='/about'>About</Link></li>
     
     </ul>

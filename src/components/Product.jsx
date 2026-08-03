@@ -10,6 +10,7 @@ const Product = (props)=>{
             </h1>
             <p>{rating.rate}</p>
             <p>{price}</p>
+           
         </div>
     )
 }
