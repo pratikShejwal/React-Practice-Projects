@@ -11,16 +11,20 @@ import Kid from './components/Kid'
 import Women from './components/Women'
 import ProductDetails from './components/ProductDetails'
 import About from './components/About'
+import UserContext from './utils/UserContext'
+
 // import Grocery from './components/Grocery'
 
 const Grocery = lazy(()=> import('./components/Grocery'))
 
 const App = ()=>{
     return (
-    <>
+
+    <div>
     <NavBar/>
     <Outlet/>
-    </>
+    </div>
+
     )
 }
 const appRouter = createBrowserRouter([
