@@ -14,6 +14,7 @@ import ProductDetails from './components/ProductDetails'
 import About from './components/About'
 import UserContext from './utils/UserContext'
 import appStore from './store/store'
+import Ref from './components/Ref'
 // import Grocery from './components/Grocery'
 
 const Grocery = lazy(()=> import('./components/Grocery'))
@@ -41,7 +42,7 @@ const appRouter = createBrowserRouter([
         path:'/men',
         element:<Men/>
        },
-            {
+        {
         path:'/grocery',
         element:<Suspense fallback={<h1>Loading...</h1>}><Grocery/></Suspense>
        },
@@ -56,6 +57,10 @@ const appRouter = createBrowserRouter([
      {
         path:'/about',
         element:<About/>,   
+     },
+     {
+        path:'/ref',
+        element:<Ref/>,   
      },
      {
         path:'/product/:prodId',
