@@ -15,6 +15,7 @@ import About from './components/About'
 import UserContext from './utils/UserContext'
 import appStore from './store/store'
 import Ref from './components/Ref'
+import Login from './components/Login'
 // import Grocery from './components/Grocery'
 
 const Grocery = lazy(()=> import('./components/Grocery'))
@@ -61,6 +62,10 @@ const appRouter = createBrowserRouter([
      {
         path:'/ref',
         element:<Ref/>,   
+     },
+     {
+        path:'/login',
+        element:<Login/>,   
      },
      {
         path:'/product/:prodId',
